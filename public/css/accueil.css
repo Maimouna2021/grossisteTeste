@@ -1,0 +1,36 @@
+/* Coté SideBare */
+
+img{
+    width: 100px;
+    height: 100px;
+    margin-left: 90px;
+}
+
+.close-coix{
+    width: 200px !important;
+    height: 200px !important;
+    margin-left: 95px !important;
+    margin-top: -100px !important;
+}
+
+.sidebare{
+    background-color: #8551c8;
+    width: 300px !important;
+}
+.sidebar-link{
+    margin-left: 20px !important;
+    color: #fff;
+    font-size: larger;
+}
+
+.acueil-content{
+    background-color: red;
+    width: 90%;
+    position: relative;
+    margin-right: -150px;
+}
+.menu{
+    justify-content: space-between;
+    margin: 2% auto;
+    box-shadow: 2px 2px 2px 2px black;
+}
