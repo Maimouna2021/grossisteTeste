@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Facture extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
-    public function produit__vendu()
-    {
-        return $this->hasMany(Produit_Vendu::class);
-    }
 }

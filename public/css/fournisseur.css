@@ -1,0 +1,14 @@
+.fournisseur{
+    background-color: white;
+    height: 100vh !important;
+    margin-left: -6%;
+
+}
+.menu{
+    background-color: #566787;
+    height: 100% !important;
+    margin-left: -6%;
+}
+.tableau{
+    margin: 0 auto;
+}

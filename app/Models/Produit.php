@@ -2,21 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Produit extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function client()
+    public function produitVendus()
     {
-        return $this->belongsToMany(Client::class, 'produit_vendu', 'Produit_id','Client_id');
+        return $this->hasMany(ProduitVendu::class);
     }
     
-    public function commande()
+    public function produitCommandes()
     {
-        return $this->belongsToMany(Commande::class, 'produit_commande', 'Produit_id','Commande_id');
+        return $this->hasMany(ProduitCommande::class);
     }
 }

@@ -24,7 +24,7 @@ img{
 }
 
 .acueil-content{
-    background-color: red;
+    /* background-color: red; */
     width: 90%;
     position: relative;
     margin-right: -150px;
@@ -32,5 +32,22 @@ img{
 .menu{
     justify-content: space-between;
     margin: 2% auto;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 1px 1px 1px 1px black;
+}
+.boutonmenu{
+    background-color: #8551c8;
+}
+.card{
+    background-color: #8551c8;
+    color: #fff;
+    width: 5px !important;
+    height: 100px;
+    margin: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.card:hover{
+    width: 53% !important;
+    background-color: black;
+    transition: 2s;
 }

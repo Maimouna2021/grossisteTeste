@@ -28,11 +28,12 @@
                     Tableau de bord
                 </div>
             </div>
+
             <div class="row p-3">
                 <div class="col-1">
                     <span class="iconify" data-icon="ic:outline-production-quantity-limits" style="color: white;" data-width="30" data-height="30"></span>                
                     </div>
-                <div class="col-8 sidebar-link">
+                <div class="col-8 sidebar-link"> 
                     Produit
                 </div>
             </div>
@@ -41,16 +42,19 @@
                     <span class="iconify" data-icon="eos-icons:product-classes-outlined" style="color: white;" data-width="30" data-height="30"></span>            
                 </div>    
                 <div class="col-8 sidebar-link">
-                    Stock
+                    Vente
                 </div>
             </div>
+
              <div class="row p-3">
                 <div class="col-1">
-                    <span class="iconify" data-icon="clarity:thin-client-line" style="color: white;" data-width="30" data-height="30"></span>                </div>    
+                    <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
+                </div>
                 <div class="col-8 sidebar-link">
-                    Client
+                    Clients
                 </div>
             </div>
+            
             <div class="row p-3">
                 <div class="col-1">
                     <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>

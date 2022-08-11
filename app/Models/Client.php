@@ -10,9 +10,8 @@ class Client extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function produit()
+    public function produitVendus()
     {
-        return $this->belongsToMany(Produit::class, 'produit_vendus', 'produit_id','client_id');
+        return $this->hasMany(ProduitVendu::class);
     }
-
 }
