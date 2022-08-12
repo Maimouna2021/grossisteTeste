@@ -37,14 +37,10 @@
         </div>
     </div>
 
-<div class="modal-dialog">
-    <div class="modal-content">
-        <form method="POST">
+
+        <form method="POST"  action="{{ url('commande/store')}}" enctype="multipart/form-data" class="w-50">
         @csrf
-            <div class="modal-header">						
-                <h4 class="modal-title">Ajouter commande</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
+           
             <div class="modal-body">					
                 <div class="form-group">
                     <label>numero_commande</label>
@@ -53,7 +49,7 @@
 
                 <div class="form-group">
                     <label>description </label>
-                    <input type="text" class="form-control" name="description " required>
+                    <input type="text" class="form-control" name="description" required>
                 </div>
                 
                 <div class="form-group">
@@ -70,10 +66,8 @@
                 </div>				
             </div>
             <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                <input type="submit" class="btn btn-success" value="Ajouter">
+                <input type="submit" class="btn btn-success mt-3" value="Ajouter">
             </div>
         </form>
-    </div>
-</div>
+
 </div>

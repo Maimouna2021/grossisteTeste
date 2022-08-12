@@ -45,4 +45,39 @@ class ClientController extends Controller
     
         return redirect()->Route('client.index');
     } 
+
+    
+    public function edit($id){
+        $client = Client::find($id);
+        return view('pages.ajoutClient', compact('client'));
+    }
+
+    public function update($id, Request $request ){
+        $client = Client::find($id);
+
+        $request->validate([
+            'nom'=> 'required',
+            'prenom'=> 'required',
+            'tel'=> 'required',
+            'adresse'=> 'required',
+        ]);
+
+        $form_data = array(
+            'nom'=> $request->nom,
+            'prenom'=> $request->prenom,
+            'tel'=> $request->adresse,
+            'adresse'=> $request->adresse,
+           
+        );
+
+        $client->update($form_data);
+    
+        return back()->withSuccess("entregistrement réussi");
+    }
+
+    public function delete($id){
+        $client = Client::find($id);
+        $client->delete();
+        return back()->withSuccess("suppression réussi");
+    }
 }

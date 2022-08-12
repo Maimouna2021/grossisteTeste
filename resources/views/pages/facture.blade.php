@@ -17,7 +17,7 @@
                     </div>
                     <div class="title">
                         <p class="h1">
-                            Ajout client
+                            Liste des factures
                         </p>
                     </div>
 
@@ -37,81 +37,28 @@
         </div>
     </div>
     <div class="col-9 acueil-content">
-    <h1>Enregistrer une facture</h1>
                 <div class="form mt-5">
                 <div class="container">
-                <form>
-                    <div class="row">
-                       <div class="col-4">
-                          <input class="form-control form-control-lg" type="text" placeholder="Nom">
-                       </div> 
-                       <div class="col-4">
-                          <input class="form-control form-control-lg" type="text" placeholder="Prenom">
-                       </div> 
-                       <div class="col-4">
-                          <input class="form-control form-control-lg" type="text" placeholder="Adresse">
-                       </div> 
-                    </div>
-                     <div class="row">
-                       <div class="col-4 mt-3">
-                          <input class="form-control form-control-lg" type="text" placeholder="Telephone">
-                       </div> 
-                </form>
-                <div>
-                    <div class="row">
-                       <div class="col-4 p-3">
-                          <h3>libelle</h3>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <h3>Quantite</h3>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <h3>Prix-Unitaire</h3>
-                       </div> 
-                    </div>
-                    <hr>
-
-                     <div class="row">
-                       <div class="col-4 p-3">
-                          <p>Vitalait</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>20 cartons</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>8 000</p>
-                       </div> 
-                    </div>
-
-                      <div class="row">
-                       <div class="col-4 p-3">
-                          <p>Vitalait</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>20 cartons</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>8 000</p>
-                       </div> 
-                    </div>
-
-                     <div class="row">
-                       <div class="col-4 p-3">
-                          <p>Vitalait</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>20 cartons</p>
-                       </div> 
-                       <div class="col-4 p-3">
-                          <p>8 000</p>
-                       </div> 
-                    </div>
-                     <div class="col-12 rounded">
-                        <button type="buttonImprimmer" class="bouton">Imprimer</button>
-                     </div> 
-                </div>
-               </div>
+             <div class="row facture my-5">
+            <div class="col-7 tableau">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th  scope="col">ID</th>
+                            <th  scope="col">numero_facture</th>
+                        </tr>
+                    </thead>
+                    @foreach ($factures as $facture)
+                                
+                    <tbody>
+                    <tr>
+                        <td>{{$facture->id }}</td>
+                        <td>{{$facture->numero_facture }}</td>
+                    </tbody>
+                   @endforeach
+                </table>
             </div>
-        </form>   
+        </div>
+                    
    </div>
 </div>

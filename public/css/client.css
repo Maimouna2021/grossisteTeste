@@ -1,8 +1,7 @@
 .client{
     background-color: white;
     height: 100vh !important;
-    margin-left: -6%;
-
+    margin-left: 100px !important;
 }
 .menu{
     background-color: #566787;

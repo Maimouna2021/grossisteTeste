@@ -35,20 +35,20 @@
                 </div>    
                 <div class="row p-5 w-75" style="margin: 0 auto">
                     <div class="row">
-                        <a href="" class=" card-body card P-3">
+                         <div class=" card-body card P-3">
                             <div>
                                 <span class="iconify" data-icon="ic:outline-production-quantity-limits" style="color: white;" data-width="30" data-height="30"></span>                
                             </div> 
                             <div>
-                                <h5 class="card-title">Produit</h5>
+                                <h5 class="card-title"><a href="{{ route('produit.index')}}">Produit</a></h5>
                             </div>
-                        </a>
+                             </div>
                         <div class=" card-body card P-3">
                             <div>
                                 <span class="iconify" data-icon="eos-icons:product-classes-outlined" style="color: white;" data-width="30" data-height="30"></span>            
                             </div> 
                             <div>
-                                <h5 class="card-title">Vente</h5>
+                                <h5 class="card-title"><a href="{{ route('produitVendu.index')}}">Vente</a></h5>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                                 <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
                             </div> 
                             <div>
-                                <h5 class="card-title">Client</h5>
+                                 <h5 class="card-title"><a href="{{ route('client.index')}}">Client</a></h5>
                             </div>
                         </div>
                         <div class="card-body  card P-3">
@@ -66,7 +66,7 @@
                                 <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
                             </div> 
                             <div>
-                                <h5 class="card-title">Fournisseur</h5>
+                                <h5 class="card-title"><a href="{{ route('fournisseur.index')}}">Fournisseur</a></h5>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                 <span class="iconify" data-icon="icon-park-outline:transaction-order" style="color: white;" data-width="30" data-height="30"></span>
                             </div> 
                             <div>
-                                <h5 class="card-title">Commande</h5>
+                                <h5 class="card-title"><a href="{{ route('commande.index')}}">Commande</a></h5>
                             </div>
                         </div>
                         <div class="card-body card ">
@@ -84,7 +84,7 @@
                                 <span class="iconify" data-icon="medical-icon:i-billing" style="color: white;" data-width="30" data-height="30"></span>
                             </div> 
                             <div>
-                                <h5 class="card-title">Facturation</h5>
+                                <h5 class="card-title"><a href="{{ route('facture.index')}}">Facture</a></h5>
                             </div>
                         </div>
                     </div> 

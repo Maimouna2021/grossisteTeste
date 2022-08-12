@@ -1,8 +1,6 @@
 .produit{
     background-color: white;
     height: 100vh !important;
-    margin-left: -6%;
-
 }
 .menu{
     background-color: #566787;
@@ -11,4 +9,5 @@
 }
 .tableau{
     margin: 0 auto;
+    width: 70%!important;
 }

@@ -34,7 +34,8 @@
                     <span class="iconify" data-icon="ic:outline-production-quantity-limits" style="color: white;" data-width="30" data-height="30"></span>                
                     </div>
                 <div class="col-8 sidebar-link"> 
-                    Produit
+                <a href="{{ route('produit.index')}}">Produit</a>
+
                 </div>
             </div>
             <div class="row p-3">
@@ -42,7 +43,8 @@
                     <span class="iconify" data-icon="eos-icons:product-classes-outlined" style="color: white;" data-width="30" data-height="30"></span>            
                 </div>    
                 <div class="col-8 sidebar-link">
-                    Vente
+                <a href="{{ route('produitVendu.index')}}">Vente</a>
+
                 </div>
             </div>
 
@@ -51,7 +53,7 @@
                     <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
                 </div>
                 <div class="col-8 sidebar-link">
-                    Clients
+                <a href="{{ route('client.index')}}">Clients</a>
                 </div>
             </div>
             
@@ -60,7 +62,8 @@
                     <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
                 </div>
                 <div class="col-8 sidebar-link">
-                    Fournisseurs
+                <a href="{{ route('fournisseur.index')}}">Fournisseurs</a>
+
                 </div>
             </div>
             <div class="row p-3">
@@ -68,7 +71,7 @@
                     <span class="iconify" data-icon="icon-park-outline:transaction-order" style="color: white;" data-width="30" data-height="30"></span>
                 </div>
                 <div class="col-8 sidebar-link">
-                    Commandes
+                <a href="{{ route('commande.index')}}">Commandes</a>
                 </div>
             </div>
             <div class="row p-3">
@@ -76,7 +79,7 @@
                     <span class="iconify" data-icon="medical-icon:i-billing" style="color: white;" data-width="30" data-height="30"></span>
                 </div>
                 <div class="col-8 sidebar-link">
-                    Facturation
+                <a href="{{ route('facture.index')}}">Facture</a>
                 </div>
             </div>
         </div>

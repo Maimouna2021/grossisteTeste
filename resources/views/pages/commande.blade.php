@@ -36,63 +36,41 @@
             </div>
         </div>
     </div>
-      {{-- <div class="container-xl">
-                    <div class="table-responsive">
-                        <div class="table-wrapper">
-                            <div class="table-title">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <h2>Liste des <b>Fournisseurs</b></h2>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Ajouter un nouveau fournisseur</span></a>
-                                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Supprimmer</span></a>						
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <span class="custom-checkbox">
-                                                <input type="checkbox" id="selectAll">
-                                                <label for="selectAll"></label>
-                                            </span>
-                                        </th>
-                                       <td>#</td>
-                                        <th>Libelle <i class="fa"></i></th>
-                                        <th>Description</th>
-                                        <th>Prix-unitaire <i class="fa"></i></th>
-                                        <th>Quantite</th>
-                                        <th>Date_peremption <i class="fa"></i></th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
+<div class="row commande my-5">
+<div class="col-7 tableau">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <th>Numéro Commande</th>
+                <th>Description</th>
+                <th>Date Commande</th>
+                <th>Date Livraison</th>
+                <th>fournisseur_id</th>
+        </tr>
+        </thead>
+            @foreach ($commandes as $commande)
 
-                                 @foreach ($produitCommandes as $produitCommande)
-
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="custom-checkbox">
-                                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                                <label for="checkbox1"></label>
-                                            </span>
-                                        </td>
-                                        <td>{{$produitCommande->Libelle }}</td>
-                                        <td>{{$produitCommande->Description }}</</td>
-                                        <td>{{$produitCommande->Prix-unitaire }}</</td>
-                                        <td>{{$produitCommande->Quantite }}</</td>
-                                        <td>{{$produitCommande->Date_peremption }}</</td>
-                                        <td>
-                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                        </td>
-                                    </tr>
-                                  
-                                </tbody>
-
-                                @endforeach
-
-                            </table>    --}}
+        <tbody>
+            <tr>
+                <td>{{$commande->numero_commande }}</td>
+                <td>{{$commande->description }}</</td>
+                <td>{{$commande->date_commande }}</</td>
+                <td>{{$commande->date_livraison }}</</td>
+                <td>{{$commande->fournisseur_id }}</</td>
+                <td type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
+                        </td>
+                        <td>
+                            <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
+                        </td>
+                <td>
+                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+            </tr>
+            
+        </tbody>
+        @endforeach
+    </table>   
 </div>

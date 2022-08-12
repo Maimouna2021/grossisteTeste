@@ -44,4 +44,40 @@ class FournisseurController extends Controller
     
         return redirect()->Route('fournisseur.index');
     } 
+
+     
+    public function edit($id){
+        $fournisseur = Fournisseur::find($id);
+        return view('pages.ajoutFournisseur', compact('fournisseur'));
+    }
+
+    public function update($id, Request $request ){
+        $fournisseur = Fournisseur::find($id);
+
+        $request->validate([
+            'prenom'=> 'required',
+            'nom'=> 'required',
+            'tel'=> 'required',
+            'adresse'=> 'required',
+        ]);
+
+        $form_data = array(
+            'prenom'=> $request->prenom,
+            'nom'=> $request->nom,
+            'tel'=> $request->adresse,
+            'adresse'=> $request->adresse,
+           
+        );
+
+        $fournisseur->update($form_data);
+    
+        return back()->withSuccess("entregistrement réussi");
+    }
+
+    public function delete($id){
+        $fournisseur = Fournisseur::find($id);
+        $fournisseur->delete();
+        return back()->withSuccess("suppression réussi");
+    }
 }
+

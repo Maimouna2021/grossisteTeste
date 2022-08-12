@@ -17,10 +17,7 @@ class ProduitController extends Controller
 
      // fonction qui nous permet d'appeler le formulaire d'ajout
     public function create(){
-        $produits = Produit::All();
-        return view('pages.ajoutProduit',[
-            'produits'=>$produits
-        ]);
+        return view('pages.ajoutProduit');
     }
 
     // fonction qui nous permet de récupérer les données du formulaire 
@@ -48,5 +45,42 @@ class ProduitController extends Controller
     
         return redirect()->Route('produit.index');
     }
+
+    public function edit($id){
+        $produit = Produit::find($id);
+        return view('pages.ajoutProduit', compact('produit'));
+    }
+
+    public function update($id, Request $request ){
+        $produit = Produit::find($id);
+
+        $request->validate([
+            'libelle'=> 'required',
+            'description'=> 'required',
+            'quantite'=> 'required',
+            'prix_unitaire'=> 'required',
+            'date_entre'=> 'required',
+            'date_peremption'=> 'required',
+        ]);
+
+        $form_data = array(
+            'libelle'=> $request->libelle,
+            'description'=> $request->description,
+            'quantite'=> $request->quantite,
+            'prix_unitaire'=> $request->prix_unitaire,
+            'date_entre'=> $request->date_entre,
+            'date_peremption'=> $request->date_peremption,
+        );
+
+        $produit->update($form_data);
     
+        return back()->withSuccess("entregistrement réussi");
+    }
+
+    public function delete($id){
+        $produit = Produit::find($id);
+        $produit->delete();
+        return back()->withSuccess("suppression réussi");
+    }
+  
 }

@@ -62,12 +62,80 @@
                         <td>{{$produit->prix_unitaire }}</td>
                         <td>{{$produit->date_entre }}</td>
                         <td>{{$produit->date_peremption }}</td>
+                        <td>
+                            <a href="{{ route('produit.edit', $produit->id)}}" id="{{$produit->id}}" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{ route('produit.delete', $produit)}}">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit">
+                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                     </tbody>
                    @endforeach
-
                 </table>
             </div>
         </div>
+</div>
+
+{{-- Modale form update --}}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier Produit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                <div class="container p-5">
+            <div class="row p-5 bg-white formulairedajout">
+                 <form method="POST" action="{{ route('produit.update', $produit->id)}}" enctype="multipart/form-data" class="w-50">
+                @method("PUT")
+                @csrf
+
+                <!-- libelle -->
+                <div>
+                    <x-input id="name" class="block mt-1 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="libelle" required autofocus />
+                </div>
+
+                <!-- description -->
+                <div class="mt-4">
+                    <x-input id="description" class="block mt-1 w-full form-control" type="description" name="description" :value="old('description')" placeholder="description" required />
+                </div>
+
+                  <!-- prix_unitaire -->
+                <div class="mt-4">
+                    <x-input id="prix_unitaire" class="block mt-1 w-full form-control" type="prix_unitaire" name="prix_unitaire" :value="old('prix_unitaire')" placeholder="prix_unitaire" required />
+                </div>
+
+                   <!-- quantite -->
+                <div class="mt-4">
+                    <x-input id="quantite" class="block mt-1 w-full form-control" type="quantite" name="quantite" :value="old('quantite')" placeholder="quantite" required />
+                </div>
+
+                   <!-- date_entre -->
+                <div class="mt-4">
+                    <x-input id="date_entre" class="block mt-1 w-full form-control" type="date" name="date_entre" :value="old('date_entre')" placeholder="date_entre" required />
+                </div>
+
+                    <!-- date_peremption -->
+                <div class="mt-4">
+                    <x-input id="date_peremption" class="block mt-1 w-full form-control" type="date" name="date_peremption" :value="old('date_peremption')" placeholder="date_peremption" required />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                </div>
+        </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

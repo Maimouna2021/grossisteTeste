@@ -17,7 +17,7 @@
                     </div>
                     <div class="title">
                         <p class="h1">
-                            Ajout client
+                            Enregistrer une vente
                         </p>
                     </div>
 
@@ -37,7 +37,6 @@
         </div>
     </div>
         <div class="container p-5">
-        <h1>Enregistrer une vente</h1>
         <form method="POST" action="{{ url('produitVendu/store')}}" enctype="multipart/form-data">
             @csrf
             <div class="col-6 p-3">
