@@ -1,0 +1,16 @@
+.h1{
+    text-align: center;
+}
+.formulairedajout{
+    margin-left: 10% !important;
+}
+.boutonEnregister{
+    background-color: #8551C8 !important;
+    border-radius: 5px;
+    color: white !important;   
+}
+.boutonAnnuler{
+    background-color: #8551C8 !important;
+    border-radius: 5px;
+    color: white !important;
+}

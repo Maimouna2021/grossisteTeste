@@ -1,53 +1,18 @@
-/* Coté SideBare */
-
-img{
-    width: 100px;
-    height: 100px;
-    margin-left: 90px;
-}
-
-.close-coix{
-    width: 200px !important;
-    height: 200px !important;
-    margin-left: 95px !important;
-    margin-top: -100px !important;
-}
-
-.sidebare{
-    background-color: #8551c8;
-    width: 300px !important;
-}
-.sidebar-link{
-    margin-left: 20px !important;
-    color: #fff;
-    font-size: larger;
-}
-
 .acueil-content{
-    /* background-color: red; */
-    width: 90%;
-    position: relative;
-    margin-right: -150px;
-}
-.menu{
-    justify-content: space-between;
-    margin: 2% auto;
-    box-shadow: 1px 1px 1px 1px black;
-}
-.boutonmenu{
-    background-color: #8551c8;
+    position: fixed;
+    margin-left: 10%;
 }
 .card{
-    background-color: #8551c8;
-    color: #fff;
+    background-color: #8751C8 !important;
     width: 5px !important;
     height: 100px;
     margin: 25px;
     text-align: center;
     cursor: pointer;
 }
-.card:hover{
-    width: 53% !important;
-    background-color: black;
-    transition: 2s;
+h1{
+    color: #8751C8;
 }
+
+
+

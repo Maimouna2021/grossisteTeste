@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero_commande');
+            $table->integer('numero_commande')->unique();
             $table->text('description');
             $table->date('date_commande');
             $table->date('date_livraison');

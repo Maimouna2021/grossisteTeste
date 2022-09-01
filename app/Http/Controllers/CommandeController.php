@@ -1,24 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Facture;
 
 use App\Models\Commande;
+use Barryvdh\DomPDF\PDF;
+use App\Models\Fournisseur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class CommandeController extends Controller
 {
     
     // fonction qui nous permet de lister les commandes
+
     public function index (){
         $commandes = Commande::All();
         return view('pages.commande', [
-            'commandes'=>$commandes
+            'commandes'=>$commandes,
         ]);
     }
 
     // fonction qui nous permet d'appeler le formulaire d'ajout
     public function create(){
-        return view('pages.ajoutCommande');
+        $fournisseurs = Fournisseur::All();
+        return view('pages.ajoutCommande',[
+            'fournisseurs'=>$fournisseurs
+        ]);
     }
 
     // fonction qui nous permet de récupérer les données du formulaire 
@@ -29,7 +38,7 @@ class CommandeController extends Controller
                     'description'=> 'required',
                     'date_commande'=> 'required',
                     'date_livraison'=> 'required',
-                    'fournisseur'=> 'required',
+                    'fournisseur_id'=> 'required',
 
         ]);
     
@@ -38,11 +47,85 @@ class CommandeController extends Controller
             'description'=> $request->description,
             'date_commande'=> $request->date_commande,
             'date_livraison'=> $request->date_livraison,
-            'fournisseur'=> $request->fournisseur,
+            'fournisseur_id'=> $request->fournisseur_id,
+
         );
+
+        $fournisseur = Fournisseur::find($request->fournisseur_id);
+        $commandes = Commande::All();
     
         Commande::create($form_data);
+       return view('pages.commande', compact('form_data', 'fournisseur', 'commandes'));
+        // return redirect()->Route('facture.index');
+    }
     
-        return redirect()->Route('commande.index');
+    function get_facture()
+    {
+        $facture = DB::table('commandes')
+                            ->limit(1)
+                            ->latest()
+                            ->get();
+           
+        return $facture;
+                          
+    }
+    function pdf()
+    {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->
+        convert_facture_to_html());
+        $pdf->stream();
+    }
+    function convert_facture_to_html()
+    {
+        $facture = $this->get_facture();
+        foreach($facture as $facture)
+        { 
+        $output = '
+            <div class="row">
+            <div class="col">
+                <p>Numero Commande</p>
+             </div>
+            <div class="col">
+                <p>{{'.$facture->numero_commande.'}}</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Description</p>
+                </div>
+                <div class="col">
+                    <p>{{'.$facture->description.'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Date Commande</p>
+                </div>
+                <div class="col">
+                    <p>{{'.$facture->date_commande.'}}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Date Livraison</p>
+                </div>
+                <div class="col">
+                    <p>{{'.$facture->date_livraison.'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Fournisseur prenom fournisseur</p>
+                    <p>Fournisseur nom fournisseur</p>
+                </div>
+                <div class="col">
+                
+                </div>
+            </div>
+
+        ';
+    }
+    
+    return $output;
     } 
 }

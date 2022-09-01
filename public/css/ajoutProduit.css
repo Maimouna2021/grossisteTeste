@@ -2,10 +2,16 @@
     text-align: center;
 }
 .formulairedajout{
-    margin-left: 30% !important;
+    margin-left: 10% !important;
+
 }
-.bouton{
-    background-color: #8551C8;
+.boutonEnregister{
+    background-color: #8551C8 !important;
     border-radius: 5px;
-    margin-left: 220px;
+    color: white;   
+}
+.boutonAnnuler{
+    background-color: #8551C8 !important;
+    border-radius: 5px;
+    color: white;
 }

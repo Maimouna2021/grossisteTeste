@@ -7,37 +7,12 @@
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-        <div class="col-9 acueil-content">
-            <div class=" d-flex flex-column">
-                <div class="menu bg-white w-75 d-flex flex-row">
-                    <div class="hambergger-menu">
-                        <button class="btn boutonmenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                            <span class="iconify" data-icon="dashicons:menu-alt" style="color: white;" data-width="40" data-height="40"></span>
-                        </button>
-                    </div>
-                    <div class="title">
-                        <p class="h1">
-                            Liste des fournisseurs
-                        </p>
-                    </div>
-
-                <div class="Logout-btn btn">
-                    <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="row fournisseur my-5">
+                <div class="row text-center p-5">
+                    <h1>Liste des fournisseurs</h1>
+                </div>
             <div class="col-7 tableau">
                 <table class="table table-striped table-hover">
                     <thead>
@@ -54,13 +29,13 @@
                     <tbody>
                     <tr>
                         <td>{{$fournisseur->id }}</td>
-                        <td>{{$fournisseur->nom }}</td>
                         <td>{{$fournisseur->prenom }}</td>
+                        <td>{{$fournisseur->nom }}</td>
                         <td>{{$fournisseur->tel }}</td>
                         <td>{{$fournisseur->adresse }}</td>
                         <td>
                             <a href="{{ route('fournisseur.edit', $fournisseur->id)}}" id="{{$fournisseur->id}}" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
+                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="20" data-height="20"></span>
                             </a>
                         </td>
                         <td>
@@ -68,7 +43,7 @@
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit">
-                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
+                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="10" data-height="10"></span>
                                 </button>
                             </form>
                         </td>
@@ -76,7 +51,14 @@
                     </tbody>
                    @endforeach
                 </table>
-            </div>
+                <div class="row">
+                    <div class="col-2 p-3">
+                        <a href="{{ route('dashboard')}}" class="bouton_deconnexion">Retour</a>
+                    </div>
+                    <div class="col-10 p-3">
+                        <a href="#" class="bouton_deconnexion">Suivant</a>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

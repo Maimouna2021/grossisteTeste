@@ -1,89 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link rel="stylesheet" href="{{asset('css/accueil.css')}}">
+    <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>Document</title>
 </head>
-<body>
-    <div class="offcanvas offcanvas-start sidebare" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <div class="offcanvas-title">
-                <img src="{{asset('img/logo_mbd.png')}}">
-            </div>
-            <button type="button" class="btn-close close-coix" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-           <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="ic:round-dashboard" style="color: white;" data-width="30" data-height="30"></span>
-                </div>
-                <div class="col-8 sidebar-link">
-                    Tableau de bord
-                </div>
-            </div>
 
-            <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="ic:outline-production-quantity-limits" style="color: white;" data-width="30" data-height="30"></span>                
-                    </div>
-                <div class="col-8 sidebar-link"> 
-                <a href="{{ route('produit.index')}}">Produit</a>
-
-                </div>
+<div class="mbd-general">
+    <input type="checkbox" id="check">
+    <!--------header arear start------------>
+    <header>
+        <div class="globalhearder">
+            <div class="bouton_menu">
+                 <label for="check">
+                    <i class="fas fa-bars" id="sidebar_btn"></i>
+                </label>
             </div>
-            <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="eos-icons:product-classes-outlined" style="color: white;" data-width="30" data-height="30"></span>            
-                </div>    
-                <div class="col-8 sidebar-link">
-                <a href="{{ route('produitVendu.index')}}">Vente</a>
-
-                </div>
+            <div class="bouton_droite">
+                <a href="{{ route('dashboard')}}" class="bouton_deconnexion">Deconnexion</a>
             </div>
-
-             <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
-                </div>
-                <div class="col-8 sidebar-link">
-                <a href="{{ route('client.index')}}">Clients</a>
-                </div>
+        </div>  
+    </header>
+        <!--------header arear end------------>
+        <!--------sidebar start------------>
+    <div class="sidebar">
+        <center>
+            <img src="{{asset('img/logo.png')}}" class="logo" alt="">
+            <hr>
+        </center>
+            <div class="dropdown">
+                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Produit
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des produits</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter un produit</a></li>
+                </ul>
             </div>
-            
-            <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="emojione-monotone:family-man-man-boy-boy" style="color: white;" data-width="30" data-height="30"></span>
-                </div>
-                <div class="col-8 sidebar-link">
-                <a href="{{ route('fournisseur.index')}}">Fournisseurs</a>
-
-                </div>
+             <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Vente
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des ventes</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter une vente</a></li>
+                </ul>
             </div>
-            <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="icon-park-outline:transaction-order" style="color: white;" data-width="30" data-height="30"></span>
-                </div>
-                <div class="col-8 sidebar-link">
-                <a href="{{ route('commande.index')}}">Commandes</a>
-                </div>
+            <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Client
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des clients</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter un client</a></li>
+                </ul>
             </div>
-            <div class="row p-3">
-                <div class="col-1">
-                    <span class="iconify" data-icon="medical-icon:i-billing" style="color: white;" data-width="30" data-height="30"></span>
-                </div>
-                <div class="col-8 sidebar-link">
-                <a href="{{ route('facture.index')}}">Facture</a>
-                </div>
+            <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Fournisseur
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des fournisseurs</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter un fournisseur</a></li>
+                </ul>
             </div>
-        </div>
-    </div>
-</body>
-</body>
-</html>
+            <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Fournisseur
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des fournisseurs</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter un fournisseur</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Commande
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des commandes</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter un commmande</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a class="btn mbd-dropdown dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Facture
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ route('produit.index')}}">Liste des factures</a></li>
+                    <li><a class="dropdown-item" href="{{ route('produit.create')}}">Ajouter une facture</a></li>
+                </ul>
+            </div>
+    </div> 
+ <!--------sidebar end------------>
+</div>

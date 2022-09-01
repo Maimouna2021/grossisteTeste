@@ -7,58 +7,60 @@
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-        <div class="col-9 acueil-content">
-            <div class=" d-flex flex-column">
-                <div class="menu bg-white w-75 d-flex flex-row">
-                    <div class="hambergger-menu">
-                        <button class="btn boutonmenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                            <span class="iconify" data-icon="dashicons:menu-alt" style="color: white;" data-width="40" data-height="40"></span>
-                        </button>
-                    </div>
-                    <div class="title">
-                        <p class="h1">
-                            Liste des factures
-                        </p>
-                    </div>
-
-                <div class="Logout-btn btn">
-                    <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                        </form>
-                    </div>
+    </div>
+    <div class="acueil-content">
+    
+        <div class="produit my-5">      
+            <div class="tableau my-5">
+                <div class="text-center">
+                    <h1>Liste des commandes</h1>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-9 acueil-content">
-                <div class="form mt-5">
-                <div class="container">
-             <div class="row facture my-5">
-            <div class="col-7 tableau">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th  scope="col">ID</th>
-                            <th  scope="col">numero_facture</th>
-                        </tr>
-                    </thead>
-                    @foreach ($factures as $facture)
-                                
-                    <tbody>
-                    <tr>
-                        <td>{{$facture->id }}</td>
-                        <td>{{$facture->numero_facture }}</td>
-                    </tbody>
-                   @endforeach
-                </table>
+    
+         <div class="row">
+            <div class="col">
+                <p>Numero Commande</p>
+           </div>
+            <div class="col">
+                <p>{{$form_data["numero_commande"]}}</p>
+            </div>
+    
+        <div class="row">
+            <div class="col">
+                <p>Description</p>
+            </div>
+            <div class="col">
+                <p>{{$form_data["description"]}}</p>
             </div>
         </div>
-                    
-   </div>
+        <div class="row">
+            <div class="col">
+                <p>Date Commande</p>
+            </div>
+            <div class="col">
+                <p>{{$form_data["date_commande"]}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Date Livraison</p>
+            </div>
+            <div class="col">
+                <p>{{$form_data["date_livraison"]}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Fournisseur prenom fournisseur</p>
+                <p>Fournisseur nom fournisseur</p>
+            </div>
+            <div class="col">
+                <p>{{$fournisseur->prenom}}</p>
+                <p>{{$fournisseur->nom}}</p>
+            </div>
+        </div>
+    </div>
+     <a href="{{ url('facture/pdf')}}" class="boutonImpression">Imprimer</a>
 </div>
+

@@ -3,11 +3,8 @@
     height: 100vh !important;
     margin-left: 60px !important;
 }
-.menu{
-    background-color: #566787;
-    height: 100% !important;
-    margin-left: -6%;
-}
 .tableau{
     margin: 0 auto;
+    margin-right: 40px !important;
+
 }

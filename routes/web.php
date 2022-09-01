@@ -30,9 +30,7 @@ Route::post('/produit/store', [ProduitController::class, 'store'])->name('produi
 Route::put('/produit/update/{id}', [ProduitController::class, 'update'])->name('produit.update');
 Route::get('/produit/edit/{id}', [ProduitController::class, 'edit'])->name('produit.edit');
 Route::delete('/produit/delete/{id}', [ProduitController::class, 'delete'])->name('produit.delete');
-
-
-
+Route::get('/produit/list', [ProduitController::class, 'show'])->name('produit.show');
 
 // Route pour les clients
 Route::get('/client', [ClientController::class, 'index'])->name('client.index');
@@ -62,11 +60,16 @@ Route::delete('/produitVendu/delete/{id}', [ProduitVenduController::class, 'dele
 Route::get('/commande', [CommandeController::class, 'index'])->name('commande.index');
 Route::get('/commande/ajout', [CommandeController::class, 'create'])->name('commande.create');
 Route::post('/commande/store', [CommandeController::class, 'store'])->name('commande.store');
+Route::put('/commande/update/{id}', [CommandeController::class, 'update'])->name('commande.update');
+Route::get('/commande/edit/{id}', [CommandeController::class, 'edit'])->name('commande.edit');
+Route::delete('/commande/delete/{id}', [CommandeController::class, 'delete'])->name('commande.delete');
+
 
 // Route pour les factures
 Route::get('/facture', [FactureController::class, 'index'])->name('facture.index');
 Route::get('/facture/ajout', [FactureController::class, 'create'])->name('facture.create');
 Route::post('/facture/store', [FactureController::class, 'store'])->name('facture.store');
+Route::get('/facture/pdf', [CommandeController::class, 'pdf'])->name('facture.pdf');
 
 Route::get('/dashboard', function () {
     return view('pages.accueil');

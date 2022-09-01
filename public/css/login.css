@@ -24,9 +24,13 @@ form{
     margin-left: -2%;
     height: 539px;
 }
+.boutonConnexion{
+    background-color: #8551C8;
+}
 
 @media screen and (max-width: 660px) {
     .image {
       display: none;
     }
   }
+

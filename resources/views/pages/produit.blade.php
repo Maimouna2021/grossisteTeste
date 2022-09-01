@@ -7,38 +7,13 @@
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-        <div class="col-9 acueil-content">
-            <div class=" d-flex flex-column">
-                <div class="menu bg-white w-75 d-flex flex-row">
-                    <div class="hambergger-menu">
-                        <button class="btn boutonmenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                            <span class="iconify" data-icon="dashicons:menu-alt" style="color: white;" data-width="40" data-height="40"></span>
-                        </button>
-                    </div>
-                    <div class="title">
-                        <p class="h1">
-                            Liste des produits
-                        </p>
-                    </div>
-
-                <div class="Logout-btn btn">
-                    <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <div class="row produit my-5">
-            <div class="col-7 tableau">
+      
+         <div class="row mbd-liste-produit my-5">      
+            <div class="mbd-tableau my-5">
+                <div class="row text-center">
+                    <h1>Liste des produits</h1>
+                </div>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -51,8 +26,7 @@
                             <th  scope="col">Date Peremption</th>
                         </tr>
                     </thead>
-                     @foreach ($produits as $produit)
-                                
+                     @foreach ($produits as $produit)       
                     <tbody>
                     <tr>
                         <td>{{$produit->id }}</td>
@@ -63,8 +37,8 @@
                         <td>{{$produit->date_entre }}</td>
                         <td>{{$produit->date_peremption }}</td>
                         <td>
-                            <a href="{{ route('produit.edit', $produit->id)}}" id="{{$produit->id}}" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
+                            <a href="{{ route('produit.edit', $produit->id)}}" id="{{$produit->id}}" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="30" data-height="30"></span>
                             </a>
                         </td>
                         <td>
@@ -72,7 +46,7 @@
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit">
-                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
+                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="30" data-height="30"></span>
                                 </button>
                             </form>
                         </td>
@@ -80,6 +54,15 @@
                     </tbody>
                    @endforeach
                 </table>
+                
+                <div class="row">
+                     <div class="col-2 p-3">
+                        <a href="{{ route('dashboard')}}" class="bouton_retour">Retour</a>
+                    </div>
+                    <div class="col-10 p-3">
+                        <a href="{{ route('dashboard')}}" class="bouton_retour">Suivant</a>
+                </div>
+        </div>
             </div>
         </div>
 </div>
@@ -90,7 +73,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier Produit</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier un produit</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -124,12 +107,12 @@
                 <div class="mt-4">
                     <x-input id="date_entre" class="block mt-1 w-full form-control" type="date" name="date_entre" :value="old('date_entre')" placeholder="date_entre" required />
                 </div>
-
                     <!-- date_peremption -->
                 <div class="mt-4">
                     <x-input id="date_peremption" class="block mt-1 w-full form-control" type="date" name="date_peremption" :value="old('date_peremption')" placeholder="date_peremption" required />
                 </div>
                 <div class="modal-footer">
+                
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>

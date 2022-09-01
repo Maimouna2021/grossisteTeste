@@ -7,38 +7,17 @@
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-        <div class="col-9 acueil-content">
-            <div class=" d-flex flex-column">
-                <div class="menu bg-white w-75 d-flex flex-row">
-                    <div class="hambergger-menu">
-                        <button class="btn boutonmenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                            <span class="iconify" data-icon="dashicons:menu-alt" style="color: white;" data-width="40" data-height="40"></span>
-                        </button>
-                    </div>
-                    <div class="title">
-                        <p class="h1">
-                            Liste des commandes
-                        </p>
-                    </div>
-
-                <div class="Logout-btn btn">
-                    <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    
 <div class="row commande my-5">
-<div class="col-7 tableau">
-    <table class="table table-striped table-hover">
+    <div class="col-10 tableau">
+
+        <div class="row text-center my-5">
+            <h1>Liste des Commandes</h1>
+    </div>
+     <a href="{{ url('facture/pdf')}}" class="boutonImpression">Imprimer</a>
+    
+        <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <td>ID</td>
@@ -58,19 +37,30 @@
                 <td>{{$commande->date_commande }}</</td>
                 <td>{{$commande->date_livraison }}</</td>
                 <td>{{$commande->fournisseur_id }}</</td>
-                <td type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="40" data-height="50"></span>
-                        </td>
-                        <td>
-                            <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="40" data-height="50"></span>
-                        </td>
                 <td>
-                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                </td>
+                    <a href="{{ route('fournisseur.edit', $commande->id)}}" id="{{$commande->id}}" type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="20" data-height="20"></span>
+                    </a>
+                </td>  
+                  <td>
+                    <form method="POST" action="{{ route('commande.delete', $commande)}}">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit">
+                            <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="10" data-height="10"></span>
+                        </button>
+                    </form>
+                </td>   
             </tr>
-            
         </tbody>
         @endforeach
-    </table>   
+    </table> 
+     <div class="row">
+        <div class="col-2 p-3">
+            <a href="{{ route('dashboard')}}" class="bouton_deconnexion">Retour</a>
+        </div>
+        <div class="col-10 p-3">
+            <a href="#" class="bouton_deconnexion">Suivant</a>
+        </div>
+    </div>  
 </div>

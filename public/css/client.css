@@ -1,13 +1,26 @@
 .client{
     background-color: white;
-    height: 100vh !important;
-    margin-left: 100px !important;
-}
-.menu{
-    background-color: #566787;
-    height: 100% !important;
-    margin-left: -6%;
+    margin-left: 140px !important;
 }
 .tableau{
     margin: 0 auto;
+}
+.bouton_retour{
+    padding: 5px;
+    background: #7851C8;
+    text-decoration: none;
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: bacground;
+    position: relative;
+    bottom: 24.12px;
+}
+.bouton_retour:hover{
+    background: #0D9DBB;
 }

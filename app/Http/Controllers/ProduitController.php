@@ -9,11 +9,12 @@ class ProduitController extends Controller
 {
      // fonction qui nous permet de lister les produits
     public function index (){
-        $produits = Produit::All();
+        $produits = Produit::All();    
         return view('pages.produit', [
             'produits'=>$produits
         ]);
     }
+     // fonction qui nous permet faire la pagination
 
      // fonction qui nous permet d'appeler le formulaire d'ajout
     public function create(){
