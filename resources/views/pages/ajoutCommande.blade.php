@@ -8,45 +8,44 @@
             @include('layouts.sidebare')
         </div>
     </div>
-
         <div class="container p-5">
             <div class="row text-center my-5">
                   <h1>Ajouter une commande</h1>
             </div>
             <div class="row p-5 bg-white w-50 h-75 formulairedajout">
                <form method="POST"  action="{{ url('commande/store')}}" enctype="multipart/form-data" class="w-100">
-                 @csrf
-                <div class="modal-body">					
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="numero_commande"required placeholder="numero commande">
-                    </div>
-                    <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="description" required placeholder="description">
-                    </div>
-            
-                    <div class="form-group mt-3">
-                        <libelle>Date commande</libelle>
-                        <input type="date" class="form-control" name="date_commande" required placeholder="date commande">
-                    </div>
-                    <div class="form-group mt-3">
-                        <libelle>Date livraison</libelle>
-                        <input type="date" class="form-control" name="date_livraison" required placeholder="date livraison">
-                    </div>	
-                    <div class="form-group">
-                          <div class="mt-3">
-                            <select class="form-control mb-3"  name="fournisseur_id" aria-label="liste des fournisseurs">
-                            <option selected>Selectionner un fournisseur </option>
-                            @foreach ($fournisseurs as $fournisseur)
-                            <option value="{{ $fournisseur->id }}">{{ $fournisseur->prenom }} {{ $fournisseur->nom }}</option>
-                            @endforeach
-                            </select>
+                    @csrf
+                    <div class="modal-body">					
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="numero_commande"required placeholder="numero commande">
                         </div>
-                    </div>				
-                </div>
-                  <div class="p-3">
-                    <button href="{{ route('produit.index')}}" class="btn btn-danger  boutonAjout">Ajouter</button>
-                    <a href="{{ route('produit.create')}}" class="btn btn-danger boutonAnnuler">Annuler</a>
-                </div>
-            </form>
-    </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="description" required placeholder="description">
+                        </div>
+                        <div class="form-group mt-3">
+                            <libelle>Date commande</libelle>
+                            <input type="date" class="form-control" name="date_commande" required placeholder="date commande">
+                        </div>
+                        <div class="form-group mt-3">
+                            <libelle>Date livraison</libelle>
+                            <input type="date" class="form-control" name="date_livraison" required placeholder="date livraison">
+                        </div>	
+                        <div class="form-group">
+                            <div class="mt-3">
+                                <select class="form-control mb-3"  name="fournisseur_id" aria-label="liste des fournisseurs">
+                                <option selected>Selectionner un fournisseur </option>
+                                @foreach ($fournisseurs as $fournisseur)
+                                <option value="{{ $fournisseur->id }}">{{ $fournisseur->prenom }} {{ $fournisseur->nom }}</option>
+                                @endforeach
+                                </select>
+                            </div>
+                        </div>				
+                    </div>
+                    <div class="p-3">
+                        <button href="{{ route('produit.index')}}" class="btn btn-danger  boutonAjout">Ajouter</button>
+                        <a href="{{ route('produit.create')}}" class="btn btn-danger boutonAnnuler">Annuler</a>
+                    </div>
+                </form>
+            </div>
+        </div>
 </div>

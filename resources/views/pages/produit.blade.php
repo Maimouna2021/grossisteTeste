@@ -1,68 +1,73 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('css/produit.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container">
     <div class="row">
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-    </div>
+   
       
-         <div class="row mbd-liste-produit my-5">      
-            <div class="mbd-tableau my-5">
-                <div class="row text-center">
-                    <h1>Liste des produits</h1>
-                </div>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th  scope="col">ID</th>
-                            <th  scope="col">Libelle</th>
-                            <th  scope="col">Description</th>
-                            <th  scope="col">Quantite</th>
-                            <th  scope="col">Prix Unitaire</th>
-                            <th  scope="col">Date Entrée</th>
-                            <th  scope="col">Date Peremption</th>
-                        </tr>
-                    </thead>
-                     @foreach ($produits as $produit)       
-                    <tbody>
+    <div class="row mbd-liste-produit my-5">      
+        <div class="mbd-tableau my-5">
+            <div class="row text-center">
+                <h1>Liste des produits</h1>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
                     <tr>
-                        <td>{{$produit->id }}</td>
-                        <td>{{$produit->libelle }}</td>
-                        <td>{{$produit->description }}</td>
-                        <td>{{$produit->quantite }}</td>
-                        <td>{{$produit->prix_unitaire }}</td>
-                        <td>{{$produit->date_entre }}</td>
-                        <td>{{$produit->date_peremption }}</td>
-                        <td>
-                            <a href="{{ route('produit.edit', $produit->id)}}" id="{{$produit->id}}" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="30" data-height="30"></span>
-                            </a>
-                        </td>
-                        <td>
-                            <form method="POST" action="{{ route('produit.delete', $produit)}}">
-                                @csrf
-                                @method("DELETE")
-                                <button type="submit">
-                                    <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="30" data-height="30"></span>
-                                </button>
-                            </form>
-                        </td>
+                        <th  scope="col">ID</th>
+                        <th  scope="col">Libelle</th>
+                        <th  scope="col">Description</th>
+                        <th  scope="col">Quantite</th>
+                        <th  scope="col">Prix Unitaire</th>
+                        <th  scope="col">Date Entrée</th>
+                        <th  scope="col">Date Peremption</th>
                     </tr>
-                    </tbody>
-                   @endforeach
-                </table>
-                
-                <div class="row">
-                     <div class="col-2 p-3">
-                        <a href="{{ route('dashboard')}}" class="bouton_retour">Retour</a>
-                    </div>
-                    <div class="col-10 p-3">
-                        <a href="{{ route('dashboard')}}" class="bouton_retour">Suivant</a>
-                </div>
-        </div>
+                </thead>
+                    @foreach ($produits as $produit)       
+                <tbody>
+                <tr>
+                    <td>{{$produit->id }}</td>
+                    <td>{{$produit->libelle }}</td>
+                    <td>{{$produit->description }}</td>
+                    <td>{{$produit->quantite }}</td>
+                    <td>{{$produit->prix_unitaire }}</td>
+                    <td>{{$produit->date_entre }}</td>
+                    <td>{{$produit->date_peremption }}</td>
+                    <td>
+                        <a href="{{ route('produit.edit', $produit->id)}}" id="{{$produit->id}}" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span class="iconify" data-icon="el:file-edit-alt" style="color: #566787;" data-width="30" data-height="30"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ route('produit.delete', $produit)}}">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit">
+                                <span class="iconify" data-icon="fluent:delete-16-filled" style="color: #ce0033;" data-width="30" data-height="30"></span>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+                @endforeach
+            </table>
+            <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                <a class="page-link" href="{{ route('dashboard')}}">Precédent</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item">
+                <a class="page-link" href="{{ route('dashboard')}}">Suivant</a>
+                </li>
+            </ul>
+            </nav>
+    </div>
+    </div>
             </div>
         </div>
 </div>
@@ -122,3 +127,5 @@
     </div>
   </div>
 </div>
+
+

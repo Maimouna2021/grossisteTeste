@@ -9,58 +9,56 @@
         </div>
     </div>
     <div class="acueil-content">
-    
         <div class="produit my-5">      
             <div class="tableau my-5">
-                <div class="text-center">
-                    <h1>Liste des commandes</h1>
-                </div>
-            </div>
-        </div>
+                    <div class="text-center">
+                        <h1>Liste des commandes</h1>
+                    </div>
     
          <div class="row">
             <div class="col">
                 <p>Numero Commande</p>
            </div>
+
             <div class="col">
                 <p>{{$form_data["numero_commande"]}}</p>
             </div>
-    
-        <div class="row">
-            <div class="col">
-                <p>Description</p>
+            <div class="row">
+                <div class="col">
+                    <p>Description</p>
+                </div>
+                <div class="col">
+                    <p>{{$form_data["description"]}}</p>
+                </div>
             </div>
-            <div class="col">
-                <p>{{$form_data["description"]}}</p>
+            <div class="row">
+                <div class="col">
+                    <p>Date Commande</p>
+                </div>
+                <div class="col">
+                    <p>{{$form_data["date_commande"]}}</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>Date Commande</p>
+            <div class="row">
+                <div class="col">
+                    <p>Date Livraison</p>
+                </div>
+                <div class="col">
+                    <p>{{$form_data["date_livraison"]}}</p>
+                </div>
             </div>
-            <div class="col">
-                <p>{{$form_data["date_commande"]}}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>Date Livraison</p>
-            </div>
-            <div class="col">
-                <p>{{$form_data["date_livraison"]}}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>Fournisseur prenom fournisseur</p>
-                <p>Fournisseur nom fournisseur</p>
-            </div>
-            <div class="col">
-                <p>{{$fournisseur->prenom}}</p>
-                <p>{{$fournisseur->nom}}</p>
+            <div class="row">
+                <div class="col">
+                    <p>Fournisseur prenom fournisseur</p>
+                    <p>Fournisseur nom fournisseur</p>
+                </div>
+                <div class="col">
+                    <p>{{$fournisseur->prenom}}</p>
+                    <p>{{$fournisseur->nom}}</p>
+                </div>
             </div>
         </div>
     </div>
-     <a href="{{ url('facture/pdf')}}" class="boutonImpression">Imprimer</a>
+        <a href="{{ url('facture/pdf')}}" class="boutonImpression">Imprimer</a>
 </div>
 

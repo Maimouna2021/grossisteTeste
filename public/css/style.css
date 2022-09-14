@@ -1,3 +1,94 @@
-body{
-    background-color: red !important;
+/*-------section login--------*/
+.mbd-section-container{
+    background-color: #8551C8;
+    height: 100vh !important;
+    margin: auto;
+    padding: 0;
 }
+.mbd-formulaire-login{
+    margin: 50px auto;
+    width: 100%;
+}
+.mbd-login-section{
+    box-shadow: 0px 0px 10px #000;
+    width: 85%;
+    margin: 0 auto;
+}
+.mbd-img-login{
+    width: 107%;
+    margin-left: -2%;
+    height: 562px;
+}
+.boutonConnexion{
+    background-color: #8551C8;
+}
+/*-------section accueil--------*/
+ .mbd-acueil-container{
+    margin-left: 10% !important;
+}
+.mbd-carte{
+    background-color: #8751C8 !important;
+    width: 95px !important;
+    height: 100px;
+    margin: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.mbd-titre-1{
+    color: #8751C8;
+    
+}
+/*-------section accueil--------*/
+.produit{
+    background-color: white;
+    height: 100vh !important;
+}
+.menu{
+    background-color: #566787;
+    height: 100% !important;
+    margin-left: -6%;
+}
+.tableau{
+    margin: 0 auto;
+    width: 75%!important;
+    margin-right: 10px;
+}
+.bouton_menu h3{
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900px;
+}
+.bouton_menu span{
+    color: #1DC4E7;
+}
+.bouton_retour{
+    padding: 5px;
+    background: #7851C8;
+    text-decoration: none;
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: bacground;
+    position: relative;
+    bottom: 24.12px;
+}
+.bouton_retour:hover{
+    background: #0D9DBB;
+}
+
+
+
+
+
+
+
+
+
+

@@ -8,38 +8,34 @@
             @include('layouts.sidebare')
         </div>   
     </div>
-            <div class="container p-5">
-                <div class="row text-center my-5">
-                    <h1>Ajouter un fournisseur</h1>
-                </div>
-                        <div class="row p-5 bg-white w-50 h-50 formulairedajout">
-                            <form method="POST" action="{{ url('fournisseur/store')}}" enctype="multipart/form-data" class="w-100">
-                                @csrf
-                                <!-- Prenom -->
-                                <div>
-                                    <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="prenom" required autofocus />
-                                </div>
-
-                                <!-- Nom -->
-                                <div class="mt-4">
-                                    <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
-                                </div>
-
-                                <!--Adresse-->
-                                <div class="mt-4">
-                                    <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="adresse" required />
-                                </div>
-
-                                <!--Telephone-->
-                                <div class="mt-4">
-                                    <x-input id="telephone" class="block mt-1 w-full form-control" type="telephone" name="tel" :value="old('telephone')" placeholder="telephone" required />
-                                </div>
-                                     <div class="p-3">
-                                        <button href="{{ route('fournisseur.index')}}" class="btn btn-danger boutonEnregister">Enregistrer</button>
-                                        <a href="{{ route('fournisseur.create')}}" class="btn btn-danger boutonAnnuler">Annuler</a>
-                                    </div>
-                            </form>
-                        </div>    
+    <div class="container p-5">
+        <div class="row text-center my-5">
+            <h1>Ajouter un fournisseur</h1>
+        </div>
+            <div class="row p-5 bg-white w-50 h-50 formulairedajout">
+                    <form method="POST" action="{{ url('fournisseur/store')}}" enctype="multipart/form-data" class="w-100">
+                        @csrf
+                        <!-- Prenom -->
+                        <div>
+                            <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="prenom" required autofocus />
+                        </div>
+                        <!-- Nom -->
+                        <div class="mt-4">
+                            <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
+                        </div>
+                        <!--Adresse-->
+                        <div class="mt-4">
+                            <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="adresse" required />
+                        </div>
+                        <!--Telephone-->
+                        <div class="mt-4">
+                            <x-input id="telephone" class="block mt-1 w-full form-control" type="telephone" name="tel" :value="old('telephone')" placeholder="telephone" required />
+                        </div>
+                        <div class="p-3">
+                            <button href="{{ route('fournisseur.index')}}" class="btn btn-danger boutonEnregister">Enregistrer</button>
+                            <a href="{{ route('fournisseur.create')}}" class="btn btn-danger boutonAnnuler">Annuler</a>
+                        </div>
+                    </form>
             </div>    
-
+    </div>
 </div>
