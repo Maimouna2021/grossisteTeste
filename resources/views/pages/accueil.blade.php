@@ -2,8 +2,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-        @include('layouts.sidebare')
-    <h1 class=" p-3 mt-5 mbd-titre-1 text-center col-xs-1 col-sm-2 col-md-3 col-lg 6 ">Accueil</h1>
+    @include('layouts.sidebare')
+    <h1 class=" p-3 mt-5 mbd-titre-1 text-center col-xs-1 col-sm-2 col-md-3 col-lg 6">Accueil</h1>
         <div class="container mbd-acueil-container d-flex justify-content-center">
             <div class="my-5 d-flex flex-column">
                 <div class="row my-5! w-75" style="margin: 0 auto">
@@ -61,14 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 p-3">
-                            <a href="#" class="bouton_deconnexion">Retour</a>
-                        </div>
-                        <div class="col-10 p-3">
-                            <a href="#" class="bouton_deconnexion">Suivant</a>
-                        </div>
-                    </div>
+    
                 </div>        
             </div>
         </div>

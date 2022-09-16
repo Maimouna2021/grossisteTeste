@@ -7,27 +7,26 @@
         <div class="col-1">
             @include('layouts.sidebare')
         </div>
-   
-      
-    <div class="row mbd-liste-produit my-5">      
-        <div class="mbd-tableau my-5">
-            <div class="row text-center">
-                <h1>Liste des produits</h1>
-            </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th  scope="col">ID</th>
-                        <th  scope="col">Libelle</th>
-                        <th  scope="col">Description</th>
-                        <th  scope="col">Quantite</th>
-                        <th  scope="col">Prix Unitaire</th>
-                        <th  scope="col">Date Entrée</th>
-                        <th  scope="col">Date Peremption</th>
-                    </tr>
-                </thead>
-                    @foreach ($produits as $produit)       
-                <tbody>
+    </div>
+    <div class="row mbd-liste-produit my-5 ">      
+        <div class="mbd-tableau my-5" >
+        <div class="text-center">
+            <h1>Liste des produits</h1>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th  scope="col">ID</th>
+                    <th  scope="col">Libelle</th>
+                    <th  scope="col">Description</th>
+                    <th  scope="col">Quantite</th>
+                    <th  scope="col">Prix Unitaire</th>
+                    <th  scope="col">Date Entrée</th>
+                    <th  scope="col">Date Peremption</th>
+                </tr>
+            </thead>
+            @foreach ($produits as $produit)       
+            <tbody>
                 <tr>
                     <td>{{$produit->id }}</td>
                     <td>{{$produit->libelle }}</td>
@@ -54,23 +53,16 @@
                 </tbody>
                 @endforeach
             </table>
-            <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                <a class="page-link" href="{{ route('dashboard')}}">Precédent</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item">
-                <a class="page-link" href="{{ route('dashboard')}}">Suivant</a>
-                </li>
-            </ul>
-            </nav>
-    </div>
-    </div>
+            <div class="container mt-3">
+                        <div class="row" style="width: 15%;">
+                            {{ $produits->links()}}
+                        </div>
+            </div>     
             </div>
         </div>
+    </div>
 </div>
+
 
 {{-- Modale form update --}}
 
@@ -100,24 +92,23 @@
 
                   <!-- prix_unitaire -->
                 <div class="mt-4">
-                    <x-input id="prix_unitaire" class="block mt-1 w-full form-control" type="prix_unitaire" name="prix_unitaire" :value="old('prix_unitaire')" placeholder="prix_unitaire" required />
+                    <x-input id="prix_unitaire" class="block mt-1 w-full form-control" type="prix_unitaire" name="prix_unitaire" placeholder="prix_unitaire" required />
                 </div>
 
                    <!-- quantite -->
                 <div class="mt-4">
-                    <x-input id="quantite" class="block mt-1 w-full form-control" type="quantite" name="quantite" :value="old('quantite')" placeholder="quantite" required />
+                    <x-input id="quantite" class="block mt-1 w-full form-control" type="quantite" name="quantite" placeholder="quantite" required />
                 </div>
 
                    <!-- date_entre -->
                 <div class="mt-4">
-                    <x-input id="date_entre" class="block mt-1 w-full form-control" type="date" name="date_entre" :value="old('date_entre')" placeholder="date_entre" required />
+                    <x-input id="date_entre" class="block mt-1 w-full form-control" type="date" name="date_entre" placeholder="date_entre" required />
                 </div>
                     <!-- date_peremption -->
                 <div class="mt-4">
-                    <x-input id="date_peremption" class="block mt-1 w-full form-control" type="date" name="date_peremption" :value="old('date_peremption')" placeholder="date_peremption" required />
+                    <x-input id="date_peremption" class="block mt-1 w-full form-control" type="date" name="date_peremption" placeholder="date_peremption" required />
                 </div>
                 <div class="modal-footer">
-                
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
@@ -127,5 +118,9 @@
     </div>
   </div>
 </div>
+
+
+
+             
 
 

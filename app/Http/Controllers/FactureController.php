@@ -15,7 +15,7 @@ class FactureController extends Controller
     
     // fonction qui nous permet de lister les produits
     public function index (){
-        $factures = Facture::All();
+        $factures = Facture::paginate(1);
         return view('pages.facture', [
             'factures'=>$factures
         ]);

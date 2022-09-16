@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('css/listeVente.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container">
     <div class="row">
@@ -48,8 +48,12 @@
                     </tr>
                     </tbody>
                    @endforeach
-
                 </table>
+                  {{-- <div class="container mt-3">
+                        <div class="row" style="width: 15%;">
+                            {{ $produitVendus->links()}}
+                        </div>
+            </div>   --}}
          <div class="d-flex justify-content-end p-3">
             <button type="submit" class="btn boutonretour" value="retour">Retour</button>
         </div>
@@ -74,8 +78,6 @@
              <form method="POST" action="{{ route('produitVendu.update', $produitVendu->id)}}" enctype="multipart/form-data" class="w-50">
                  @method("PUT")
                 @csrf
-
-
                 <!-- libelle -->
                 <div>
                     <x-input id="name" class="block mt-1 w-full form-control" type="text" name="libelle" :value="old('libelle')" placeholder="libelle" required autofocus />

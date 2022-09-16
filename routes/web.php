@@ -18,7 +18,6 @@ use App\Http\Controllers\ProduitVenduController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -63,7 +62,6 @@ Route::post('/commande/store', [CommandeController::class, 'store'])->name('comm
 Route::put('/commande/update/{id}', [CommandeController::class, 'update'])->name('commande.update');
 Route::get('/commande/edit/{id}', [CommandeController::class, 'edit'])->name('commande.edit');
 Route::delete('/commande/delete/{id}', [CommandeController::class, 'delete'])->name('commande.delete');
-
 
 // Route pour les factures
 Route::get('/facture', [FactureController::class, 'index'])->name('facture.index');

@@ -9,13 +9,11 @@ class ProduitController extends Controller
 {
      // fonction qui nous permet de lister les produits
     public function index (){
-        $produits = Produit::All();    
+        $produits = Produit::paginate(1);    
         return view('pages.produit', [
             'produits'=>$produits
         ]);
     }
-     // fonction qui nous permet faire la pagination
-
      // fonction qui nous permet d'appeler le formulaire d'ajout
     public function create(){
         return view('pages.ajoutProduit');
@@ -45,6 +43,8 @@ class ProduitController extends Controller
         Produit::create($form_data);
     
         return redirect()->Route('produit.index');
+
+        // dd($request->all());
     }
 
     public function edit($id){

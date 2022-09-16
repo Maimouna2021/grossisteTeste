@@ -16,7 +16,7 @@ class CommandeController extends Controller
     // fonction qui nous permet de lister les commandes
 
     public function index (){
-        $commandes = Commande::All();
+        $commandes = Commande::paginate(1);
         return view('pages.commande', [
             'commandes'=>$commandes,
         ]);

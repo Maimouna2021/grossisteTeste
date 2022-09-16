@@ -25,6 +25,7 @@
 /*-------section accueil--------*/
  .mbd-acueil-container{
     margin-left: 10% !important;
+    
 }
 .mbd-carte{
     background-color: #8751C8 !important;
@@ -36,6 +37,7 @@
 }
 .mbd-titre-1{
     color: #8751C8;
+    text-align: center;
     
 }
 /*-------section accueil--------*/
@@ -43,25 +45,152 @@
     background-color: white;
     height: 100vh !important;
 }
-.menu{
-    background-color: #566787;
-    height: 100% !important;
-    margin-left: -6%;
-}
-.tableau{
+.mbd-tableau{
     margin: 0 auto;
-    width: 75%!important;
-    margin-right: 10px;
-}
-.bouton_menu h3{
-    color: #000;
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 900px;
+    width: 70%!important;
+    margin-right: 20px;
 }
 .bouton_menu span{
     color: #1DC4E7;
+}
+.mdb-pagination{
+    width: 10%;
+}
+/*-------section fournisseur--------*/
+.mbd-formulairedajout{
+    width: 70%;
+    margin-left: 20%;
+    background-color: white;
+}
+/*-------section fournisseur--------*/
+.mbd-bouton{
+    background-color: #8551C8;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 43px;
+}
+.mbd-bouton:hover {
+    background-color: #000;
+  }
+/*-------section fournisseur--------*/
+.formulairedajout-client{
+    position: absolute;
+    width: 891px;
+    height: 531px;
+    left: 504px;
+    top: 238px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.boutonEnregister{
+    background-color: #8551C8 !important;
+    border-radius: 7px; 
+    color: white !important;
+}
+.boutonAnnuler{
+    background-color: #8551C8 !important;
+    border-radius: 7px;
+    color: white !important;
+}
+/*-------section sidebare--------*/
+.mbd-hearder-navbar{
+    position: fixed;
+    background-color: #fff;
+    padding: 15px;
+    width: 70%;
+    margin-left: 20%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.mbd-bouton_deconnexion{
+    padding: 5px;
+    background-color:#7851C8;
+    text-decoration: none;
+    color: #fff;
+    float: right;
+    border-radius: 5px;
+    position: relative;
+    bottom: 24.12px;
+}
+.mbd-global-navbar-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar{
+    background: #790FFF;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
+    width: 255px;
+    height: 100%; 
+    transition: 0.5s;
+    transition-property: left;
+}
+.sidebar .logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+.sidebar h4{
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.sidebar a{
+    display: block;
+    width: 100%;
+    color: skyblue;
+    line-height: 60px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background; 
+}
+/* .dropdown-menu{
+    background-color: #0D9DBB;
+} */
+/* .dropdown-menu a:hover{
+    background-color: #000;
+} */
+.sidebar a:hover{
+    background: #fff;
+}
+.sidebar i{
+    padding-right: 10px;
+}
+label #sidebar_btn{
+    z-index: 1;
+    cursor: pointer;
+    left: 300px;
+    font-size: 20px;
+    margin: 5px 0;
+    transition: 0.5s;
+    transition-property: color;
+}
+#check:checked ~ .sidebar{
+    left: -255px; 
+}
+#check:checked ~ .sidebar a span{
+    display: none;
+}
+#check:checked ~ .sidebar a{
+    font-size: 20px;
+    margin-left: 170px;
+    width: 80px;
+}
+/*-------section client--------*/
+.client{
+    background-color: white;
+    margin-left: 140px !important;
+}
+.tableau{
+    margin: 0 auto;
 }
 .bouton_retour{
     padding: 5px;
@@ -82,6 +211,98 @@
 .bouton_retour:hover{
     background: #0D9DBB;
 }
+.card-title a{
+    text-decoration: none;
+    color: white;
+    
+}
+.card-title a:hover{
+    text-decoration: none;
+    color: #000;    
+}
+.card{
+    margin-left: 20%;
+}
+/*-------section fournisseur--------*/
+.fournisseur{
+    background-color: white;
+    margin-left: 140px !important;
+}
+.tableau{
+    margin: 0 auto;
+}
+/*-------section commande--------*/
+.commande{
+    background-color: white;
+    height: 100vh !important;
+    margin-left: 60px !important;
+}
+.tableau{
+    margin: 0 auto;
+    margin-right: 40px !important;
+
+}
+/*-------section vente--------*/
+
+.boutonImprimer{
+    width: 100px;
+    height: 50px;
+    background-color: #8551C8;
+    color: white;
+    border-radius: 5px;
+}
+/*-------section ajout Commande--------*/
+.h1{
+    text-align: center;
+    color: #8551C8 !important;
+}
+.formulairedajout{
+    margin-left: 10%!important;
+}
+.boutonAjout{
+    background-color: #8551C8 !important;
+    border-radius: 5px;
+    color: white;   
+}
+.boutonAnnuler{
+    background-color: #8551C8 !important;
+    border-radius: 5px;
+    color: white;
+}
+/*-------section facture--------*/
+.acueil-content{
+    width: 50%;
+    margin-left: 30%;
+}
+.boutonImpression{
+    background-color: #920FFF;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 50%;
+    color: white;
+}
+/*-------section liste des ventes--------*/
+
+.listeVente{
+    background-color: white;
+    height: 100vh !important;
+    margin-left: 100px !important;
+    
+}
+.menu{
+    background-color: #566787;
+    height: 100% !important;
+    margin-left: -6%;
+}
+.tableau{
+    margin: 0 auto;
+}
+.boutonretour{
+    background-color: #91a9d8 !important;
+}
+
+
 
 
 

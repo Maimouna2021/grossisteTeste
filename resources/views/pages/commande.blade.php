@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('css/commande.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container">
     <div class="row">
@@ -51,15 +51,12 @@
                         </tr>
                     </tbody>
                     @endforeach
-            </table> 
-            <div class="row">
-                <div class="col-2 p-3">
-                    <a href="{{ route('dashboard')}}" class="bouton_deconnexion">Retour</a>
+            </table>
+             {{-- <div class="container mt-3">
+                <div class="row" style="width: 15%;">
+                    {{ $commandes->links()}}
                 </div>
-                <div class="col-10 p-3">
-                    <a href="#" class="bouton_deconnexion">Suivant</a>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>  
 </div>

@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('css/client.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container ">
     <div class="row">
@@ -8,10 +8,11 @@
             @include('layouts.sidebare')
         </div>
     </div>
-        <div class="row client my-5">
-            <div class="row text-center p-5">
-                  <h1>Liste des clients</h1>
-            </div>
+
+    <div class="row client my-5">
+    <div class="row text-center p-5">
+        <h1>Liste des clients</h1>
+    </div>
                 <div class="col-7 tableau">
                     <table class="table table-striped table-hover">
                         <thead>
@@ -49,15 +50,12 @@
                             </tbody>
                             @endforeach
                     </table>
-                </div>
-                    <div class="row">
-                        <div class="col-2 p-3">
-                            <a href="{{ route('dashboard')}}" class="bouton_retour">Retour</a>
-                        </div>
-                        <div class="col-10 p-3">
-                            <a href="#" class="bouton_retour">Suivant</a>
+                    <div class="container mt-3">
+                        <div class="row" style="width: 15%;">
+                            {{ $clients->links()}}
                         </div>
                     </div>
+                </div>
         </div>
 </div>
 
@@ -68,7 +66,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modifier Client</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modifier un Client</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
                 <div class="modal-body">
@@ -77,26 +75,34 @@
                                 <form method="POST" action="{{ route('client.update', $client->id)}}" enctype="multipart/form-data" class="w-50">
                                     @method("PUT")
                                     @csrf
-                                    <!-- Prenom -->
-                                    <div>
-                                        <x-input id="prenom" class="block mt-1 w-full form-control" type="text" name="prenom" :value="old('prenom')" placeholder="prenom" required autofocus />
+                                    <div class="col-sm-2 col-form-label">
+                                        <label>Prenom</label>
+                                        <input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
                                     </div>
-                                    <!-- Nom -->
-                                    <div class="mt-4">
-                                        <x-input id="nom" class="block mt-1 w-full form-control" type="nom" name="nom" :value="old('nom')" placeholder="nom" required />
+                                    <div class="col-md-3 mb-3">
+                                        <label>Nom</label>
+                                        <input type="text" class="form-control" name="nom" placeholder="Nom" required>
                                     </div>
-                                    <!-- Téléphone -->
-                                    <div class="mt-4">
-                                        <x-input id="tel" class="block mt-1 w-full form-control" type="tel" name="tel" :value="old('tel')" placeholder="tel" required />
+                                    <div class="col-md-3 mb-3">
+                                        <label>Adresse</label>
+                                        <input type="text" class="form-control" name="adresse" placeholder="Adresse" required>
                                     </div>
-                                    <!-- Adresse -->
-                                    <div class="mt-4">
-                                        <x-input id="adresse" class="block mt-1 w-full form-control" type="adresse" name="adresse" :value="old('adresse')" placeholder="adresse" required />
+                                    <div class="col-md-3 mb-3">
+                                        <label>Telephone</label>
+                                        <input type="text" class="form-control" name="tel" placeholder="Telephone" required>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                                        {{-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
                                         <button type="submit" class="btn btn-success">Enregistrer</button>
-                                    </div>
+                                    </div> --}}
+                                     <div class="text-right">
+                                    <button href="{{ route('client.index')}}" class="btn" style=" background: #790FFF; color: white;">
+                                        Enregistrer
+                                    </button>
+                                    <button href="{{ route('client.create')}}" class="btn" style=" background: #790FFF; color: white;">
+                                        fermer
+                                    </button>
+                            </div>
                                 </form>
                             </div>
                         </div>
@@ -104,3 +110,6 @@
         </div>
     </div>
 </div>
+
+
+

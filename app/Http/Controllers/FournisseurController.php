@@ -9,7 +9,7 @@ class FournisseurController extends Controller
 {
     // fonction qui nous permet de lister les produits
     public function index (){
-        $fournisseurs = Fournisseur::All();
+        $fournisseurs = Fournisseur::paginate(2);
         return view('pages.fournisseur', [
             'fournisseurs'=>$fournisseurs
         ]);

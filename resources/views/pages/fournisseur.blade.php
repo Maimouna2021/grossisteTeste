@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('css/fournisseur.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <div class="container ">
     <div class="row">
@@ -11,7 +11,7 @@
 
     <div class="row fournisseur my-5">
                 <div class="row text-center p-5">
-                    <h1>Liste des fournisseurs</h1>
+                    <h1 class="mbd-titre-1">Liste des fournisseurs</h1>
                 </div>
             <div class="col-7 tableau">
                 <table class="table table-striped table-hover">
@@ -51,14 +51,11 @@
                     </tbody>
                    @endforeach
                 </table>
-                <div class="row">
-                    <div class="col-2 p-3">
-                        <a href="{{ route('dashboard')}}" class="bouton_deconnexion">Retour</a>
+                  <div class="container mt-3">
+                        <div class="row" style="width: 15%;">
+                            {{ $fournisseurs->links()}}
+                        </div>
                     </div>
-                    <div class="col-10 p-3">
-                        <a href="#" class="bouton_deconnexion">Suivant</a>
-                    </div>
-                </div>
         </div>
     </div>
 </div>
@@ -75,7 +72,7 @@
       </div>
       <div class="modal-body">
                 <div class="container p-5">
-            <div class="row p-5 bg-white formulairedajout">
+            <div class="row p-5 bg-white mbd-formulairedajout">
                  <form method="POST" action="{{ route('fournisseur.update', $fournisseur->id)}}" enctype="multipart/form-data" class="w-50">
                 @method("PUT")
                 @csrf
