@@ -8,6 +8,10 @@
         "@tailwindcss/forms": "^0.5.2",
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
-        "axios": "^0.27"
+        "axios": "^0.27",
+        "tailwindcss": "^3.1.8"
+    },
+    "dependencies": {
+        "mdb-ui-kit": "^5.0.0"
     }
 }

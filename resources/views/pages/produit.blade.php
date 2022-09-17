@@ -53,14 +53,13 @@
                 </tbody>
                 @endforeach
             </table>
-            <div class="container mt-3">
-                        <div class="row" style="width: 15%;">
-                            {{ $produits->links()}}
-                        </div>
-            </div>     
+           {{ $produits->links()}}  
+            </div>
+                 
             </div>
         </div>
     </div>
+
 </div>
 
 
